@@ -37,7 +37,7 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="pt-BR">
-        <Head />
+        <Head title="Tony NextJS" />
         <body>
           <Main />
           <NextScript />

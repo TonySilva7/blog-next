@@ -1,12 +1,7 @@
 import { GetStaticProps } from 'next';
+import HomePage from '../containers/HomePage';
+import { getAllPosts } from '../data/posts/get-all-posts';
 import { PostData } from '../domain/posts/post';
-
-// Faz a busca na api
-const getPosts = async (): Promise<PostData[]> => {
-  const posts = await fetch('https://damp-anchorage-12027.herokuapp.com/posts');
-  const jsonPosts = await posts.json();
-  return jsonPosts;
-};
 
 // Tipagem para props da home
 export type HomeProps = {
@@ -15,22 +10,16 @@ export type HomeProps = {
 
 // Component Principal
 export default function Home({ posts }: HomeProps) {
-  return (
-    <div>
-      {posts.map((post) => (
-        <h2 key={post.slug}>{post.title}</h2>
-      ))}
-    </div>
-  );
+  return <HomePage posts={posts} />;
 }
 
 // Implementa o Static Generation (SSG)
 export const getStaticProps: GetStaticProps = async (context) => {
-  const posts = await getPosts();
+  const posts = await getAllPosts();
   console.log(context);
 
   return {
     props: { posts },
-    // revalidate: 60,
+    /* revalidate: 60, //segundos */
   };
 };

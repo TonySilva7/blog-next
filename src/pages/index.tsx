@@ -15,7 +15,7 @@ export default function Home({ posts }: HomeProps) {
 
 // Implementa o Static Generation (SSG)
 export const getStaticProps: GetStaticProps = async (context) => {
-  const posts = await getAllPosts();
+  const posts = await getAllPosts('_sort=id:desc&_start=0&_limit=30');
   console.log(context);
 
   return {

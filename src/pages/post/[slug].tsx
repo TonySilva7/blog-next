@@ -9,7 +9,12 @@ export type DynamicPostProps = {
 };
 
 export default function DynamicPost({ post }: DynamicPostProps) {
-  return <h1>{post.title}</h1>;
+  return (
+    <>
+      <h1>{post.title}</h1>
+      <p dangerouslySetInnerHTML={{ __html: post.content }} />
+    </>
+  );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -30,6 +35,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const posts = await getPost(ctx.params.slug);
+  console.log('POSTS: ', posts);
 
   return {
     props: { post: posts[0] },

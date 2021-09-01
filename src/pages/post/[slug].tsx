@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { countAllPosts } from '../../data/posts/count-all-posts';
 import { getAllPosts } from '../../data/posts/get-all-posts';
-import { getPost } from '../../data/posts/getPost';
+import { getPost } from '../../data/posts/get-post';
 import { PostData } from '../../domain/posts/post';
 
 export type DynamicPostProps = {
@@ -9,7 +9,7 @@ export type DynamicPostProps = {
 };
 
 export default function DynamicPost({ post }: DynamicPostProps) {
-  return <p>{post.title}</p>;
+  return <h1>{post.title}</h1>;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {

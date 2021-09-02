@@ -6,6 +6,5 @@ export const Container = styled.main`
     font-size: ${theme.font.sizes.medium};
     padding: ${theme.spacings.medium};
     margin: 0 auto;
-    background: pink;
   `}
 `;

@@ -12,7 +12,7 @@ export const Comments = ({ slug, title }: CommentsProps) => {
       <DiscussionEmbed
         shortname="meu-blog-next"
         config={{
-          url: `http://vcap.me:3000/post/${slug}`,
+          url: `https://blog-next-tony.netlify.app/post/${slug}`,
           identifier: slug,
           title: title,
           language: 'pt_BR',

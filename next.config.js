@@ -4,5 +4,5 @@ module.exports = {
     domains: ['res.cloudinary.com'],
     deviceSizes: [320, 640, 768, 1024, 1600],
   },
-  target: 'serverless',
+  // target: 'serverless',
 };

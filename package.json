@@ -5,10 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "next-on-netlify",
     "start": "next start",
-    "lint": "next lint",
-    "deploy:static": "next build && next export"
+    "lint": "next lint"
   },
   "dependencies": {
     "@netlify/plugin-nextjs": "^3.9.0",
